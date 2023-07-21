@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         title = selectedImage
+        navigationItem.largeTitleDisplayMode = .never //Scren Config for This One Page
 
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
