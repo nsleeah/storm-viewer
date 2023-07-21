@@ -14,6 +14,9 @@ class ViewController: UITableViewController { //ViewController inherits from UIT
     override func viewDidLoad() { //Once Screen Has Loaded
         super.viewDidLoad()
         // Add NSL Images.
+        title = "Storm Viewer"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
