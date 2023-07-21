@@ -8,11 +8,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //Declare Property Outside Method
+    var pictures = [String]()
 
-    override func viewDidLoad() {
+    override func viewDidLoad() { //Once Screen Has Loaded
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Add NSL Images.
+        let fm = FileManager.default
+        let path = Bundle.main.resourcePath!
+        let items = try! fm.contentsOfDirectory(atPath: path)
+        //All Constants Destroyed Once Loaded
+        
+        for item in items {
+            if item.hasPrefix("nssl"){
+                //This is a Picture To Load
+                pictures.append(item)
+            }
+        }
+        print(pictures)
+        
     }
+    
 
 
 }
